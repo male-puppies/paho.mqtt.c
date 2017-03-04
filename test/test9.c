@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2016 IBM Corp.
+ * Copyright (c) 2012, 2017 IBM Corp.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -12,6 +12,7 @@
  *
  * Contributors:
  *    Ian Craggs - initial API and implementation and/or initial documentation
+ *    Ian Craggs - correct some compile warnings
  *******************************************************************************/
 
 
@@ -501,7 +502,7 @@ int test1(struct Options options)
  	assert("Good rc from reconnect", rc == MQTTASYNC_SUCCESS, "rc was %d ", rc);
 	
 	/* wait for client to be reconnected */
-	while (!test1c_connected == 0 && ++count < 10000)
+	while (!test1c_connected && ++count < 10000)
 		MySleep(100);
 	
 	/* wait for success or failure callback */
@@ -778,7 +779,7 @@ int test2(struct Options options)
  	assert("Good rc from reconnect", rc == MQTTASYNC_SUCCESS, "rc was %d ", rc);
 	
 	/* wait for client to be reconnected */
-	while (!test2c_connected == 0 && ++count < 10000)
+	while (!test2c_connected && ++count < 10000)
 		MySleep(100);
 	
 	/* wait for success or failure callback */
@@ -1051,7 +1052,7 @@ int test3(struct Options options)
  	assert("Number of getPendingTokens should be 3", i == 3, "i was %d ", i);
   	
 	/* wait for client to be reconnected */
-	while (!test3c_connected == 0 && ++count < 10000)
+	while (!test3c_connected && ++count < 10000)
 		MySleep(100);
 	
 	/* wait for success or failure callback */
@@ -1326,7 +1327,7 @@ int test4(struct Options options)
  	assert("Number of getPendingTokens should be 3", i == 3, "i was %d ", i);
 	
 	/* wait for client to be reconnected */
-	while (!test4c_connected == 0 && ++count < 10000)
+	while (!test4c_connected && ++count < 10000)
 		MySleep(100);
 	
 	/* wait for success or failure callback */
@@ -1606,7 +1607,7 @@ int test5(struct Options options)
  	assert("Good rc from reconnect", rc == MQTTASYNC_SUCCESS, "rc was %d ", rc);
 	
 	/* wait for client to be reconnected */
-	while (!test5c_connected == 0 && ++count < 10000)
+	while (!test5c_connected && ++count < 10000)
 		MySleep(100);
 	
 	/* wait for success or failure callback */
