@@ -7,6 +7,7 @@ if [ "$TRAVIS_OS_NAME" == "osx" ]; then
   cd build.paho
   cmake -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DPAHO_BUILD_SAMPLES=TRUE ..
   make
+  ctest -VV
 fi
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
