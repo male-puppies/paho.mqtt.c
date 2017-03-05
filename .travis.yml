@@ -34,8 +34,13 @@ addons:
     build_command_prepend: "make clean"
     build_command: "make -j 4"
     branch_pattern: coverity-.*
+addons:
   apt:
+    sources:
+      - george-edison55-precise-backports # cmake 3.2.3 / doxygen 1.8.3
     packages:
+      - cmake
+      - cmake-data
       - mosquitto
       - doxygen
 
