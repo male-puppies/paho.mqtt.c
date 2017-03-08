@@ -1,6 +1,6 @@
 SET(MQTT_TEST_BROKER "tcp://mqtt.iotree.co.uk:1883" CACHE STRING "Hostname of a test MQTT broker to use")
 SET(MQTT_SSL_HOSTNAME "mqtt.iotree.co.uk" CACHE STRING "Hostname of a test SSL MQTT broker to use")
-SET(CERTDIR "${TRAVIS_BUILD_DIR}/test/ssl" )
+SET(CERTDIR "/home/travis/build/eclipse/paho.mqtt.c/test/ssl" )
 
 ADD_EXECUTABLE(
 	test1
