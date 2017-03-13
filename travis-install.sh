@@ -2,12 +2,13 @@
 
 
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-	sudo apt-get update -qq
-	sudo apt-get install -y libssl-dev
+	pwd
+	mosquitto -d -c ./test/tls-testing/mosquitto.conf 
 fi
 
 if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+	pwd
 	brew update
-	brew install openssl
-	export CFLAGS="-I/usr/local/opt/openssl/include $CFLAGS" LDFLAGS="-L/usr/local/opt/openssl/lib $LDFLAGS"
+	brew install openssl mosquitto
+	brew services start mosquitto -c ./test/tls-testing/mosquitto.conf 
 fi
