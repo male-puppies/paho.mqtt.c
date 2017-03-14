@@ -2,8 +2,6 @@
 
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
 	pwd
-	sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
-	sudo apt-get update -q
 	mosquitto -h
 	mosquitto -d -c test/tls-testing/mosquitto.conf
 fi
