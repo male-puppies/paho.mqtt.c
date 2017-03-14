@@ -1,7 +1,7 @@
 
 SET(MQTT_TEST_BROKER "tcp://localhost:1883" CACHE STRING "Hostname of a test MQTT broker to use")
 SET(MQTT_SSL_HOSTNAME "localhost" CACHE STRING "Hostname of a test SSL MQTT broker to use")
-SET(CERTDIR "test/ssl" )
+SET(CERTDIR "../test/ssl" )
 
 ADD_EXECUTABLE(
 	test1
