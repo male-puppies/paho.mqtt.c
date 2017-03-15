@@ -8,7 +8,9 @@ if [ "$TRAVIS_OS_NAME" == "osx" ]; then
   echo "travis build dir $TRAVIS_BUILD_DIR pwd $PWD"
   cmake -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DPAHO_BUILD_SAMPLES=TRUE ..
   make
+  python ../test/mqttsas2.py &
   ctest -VV
+  kill %1 %2
 fi
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
@@ -17,5 +19,7 @@ if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
   echo "travis build dir $TRAVIS_BUILD_DIR pwd $PWD"
   cmake -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DPAHO_BUILD_SAMPLES=TRUE ..
   make
+  python ../test/mqttsas2.py &
   ctest -VV
+  kill %1 %2
 fi

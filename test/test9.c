@@ -89,6 +89,13 @@ void getopts(int argc, char** argv)
 			else
 				usage();
 		}
+		else if (strcmp(argv[count], "--proxy_connection") == 0)
+		{
+			if (++count < argc)
+				options.proxy_connection = argv[count];
+			else
+				usage();
+		}
 		else if (strcmp(argv[count], "--verbose") == 0)
 			options.verbose = 1;
 		count++;

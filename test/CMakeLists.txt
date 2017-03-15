@@ -1,5 +1,6 @@
 
 SET(MQTT_TEST_BROKER "tcp://localhost:1883" CACHE STRING "Hostname of a test MQTT broker to use")
+SET(MQTT_TEST_PROXY "tcp://localhost:1884" CACHE STRING "Hostname of the test proxy to use")
 SET(MQTT_SSL_HOSTNAME "localhost" CACHE STRING "Hostname of a test SSL MQTT broker to use")
 SET(CERTDIR $ENV{TRAVIS_BUILD_DIR}/test/ssl )
 
@@ -129,7 +130,7 @@ TARGET_LINK_LIBRARIES(
 
 ADD_TEST(
 	NAME test9
-	COMMAND test9 "--connection" ${MQTT_TEST_BROKER}
+	COMMAND test9 "--connection" ${MQTT_TEST_BROKER} "--proxy_connection" ${MQTT_TEST_PROXY}
 )
 
 # Times out after 9 minutes

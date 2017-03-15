@@ -11,5 +11,6 @@ if [ "$TRAVIS_OS_NAME" == "osx" ]; then
 	pwd
 	brew update
 	brew install openssl mosquitto
+	brew services stop mosquitto
 	/usr/local/sbin/mosquitto -c test/tls-testing/mosquitto.conf &
 fi
