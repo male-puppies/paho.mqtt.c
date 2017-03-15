@@ -48,7 +48,7 @@ IF (PAHO_WITH_SSL)
 
 	ADD_TEST(
 		NAME test3
-		COMMAND test3 "--connection" ${MQTT_TEST_BROKER} "--client_key"	"${CERTDIR}/client.pem" "--server_key"	"${CERTDIR}/test-root-ca.crt"
+		COMMAND test3 "--hostname" ${MQTT_SSL_HOSTNAME} "--client_key"	"${CERTDIR}/client.pem" "--server_key"	"${CERTDIR}/test-root-ca.crt"
 	)
 
 	SET_TESTS_PROPERTIES(test3 PROPERTIES TIMEOUT 540)
